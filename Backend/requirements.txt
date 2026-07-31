@@ -1,10 +1,16 @@
 Flask
 Flask-Cors
+groq
+python-dotenv
 langchain
 langchain-community
+langchain-huggingface
 chromadb
 sentence-transformers
 pypdf
 faiss-cpu
 numpy
 pandas
+torch
+transformers
+huggingface-hub
