@@ -1,0 +1,10 @@
+Flask
+Flask-Cors
+langchain
+langchain-community
+chromadb
+sentence-transformers
+pypdf
+faiss-cpu
+numpy
+pandas

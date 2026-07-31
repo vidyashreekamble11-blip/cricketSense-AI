@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricketSense AI - Your Intelligent AI Cricket Umpire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-container">
+        <main class="chat-card">
+            
+            <header class="chat-header">
+                <div class="header-left">
+                    <div class="logo-container">
+                        <i class="fa-solid fa-gavel"></i> </div>
+                    <div class="header-titles">
+                        <h1>CricketSense AI</h1>
+                        <p>Your Intelligent AI Cricket Umpire</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <i class="fa-solid fa-scale-balanced scale-icon"></i>
+                    <span class="tagline">Fair. Accurate. Cricket.</span>
+                </div>
+            </header>
+
+            <section class="chat-body" id="chatBody">
+                <div class="message-row bot-row">
+                    <div class="avatar bot-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="message-bubble">
+                        <p>👋 Welcome to <strong>CricketSense AI</strong>!</p>
+                        <p>Ask me about the Laws of Cricket or describe a match scenario.</p>
+                        <span class="timestamp">12:00 PM</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="chat-footer">
+                <div class="input-wrapper">
+                    <input type="text" id="chatInput" placeholder="Describe a cricket incident..." autocomplete="off">
+                    <button class="icon-btn mic-btn" title="Voice Input">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                    <button class="send-btn" id="sendBtn">
+                        <span>Send</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
