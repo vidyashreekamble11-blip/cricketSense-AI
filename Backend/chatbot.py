@@ -1,18 +1,20 @@
 import os
+from flask import Flask, request, jsonify
+from flask_cors import CORS  # Allows your frontend to connect safely
+from groq import Groq
+from dotenv import load_dotenv
+from retriever import search_laws
 
 print("=" * 50)
 print("CHATBOT FILE LOADED")
 print(__file__)
 print("=" * 50)
 
-from groq import Groq
-from dotenv import load_dotenv
-
-from retriever import search_laws
-
-
 load_dotenv()
 
+# Initialize Flask App
+app = Flask(__name__)
+CORS(app)  # Enables cross-origin requests for your frontend app
 
 client = Groq(
     api_key=os.getenv("GROQ_API_KEY")
@@ -204,18 +206,11 @@ Always:
 
 def ask_groq(question):
 
-    print("\n" + "#" * 60)
-    print(f"DEBUG: ask_groq called with question -> '{question}'")
-    print("#" * 60)
 
     docs = search_laws(question)
 
-    print(f"DEBUG: search_laws returned {len(docs) if docs else 0} docs for question: '{question}'")
 
     if not docs:
-
-        print("DEBUG: !!! docs is EMPTY - no documents were retrieved from the vector DB !!!")
-        print("DEBUG: Returning fallback 'No relevant MCC Law was found' response.")
 
         return """
 🏏 CricketSense AI
@@ -226,16 +221,11 @@ Please provide more details.
 
 
     print("\n========== Retrieved Documents ==========\n")
-    print(f"DEBUG: Total documents retrieved: {len(docs)}")
 
 
     for i, doc in enumerate(docs):
 
         print(f"\n----- Document {i+1} -----")
-
-        metadata = getattr(doc, "metadata", {})
-        print(f"DEBUG: Document {i+1} metadata: {metadata}")
-        print(f"DEBUG: Document {i+1} content length: {len(doc.page_content)} chars")
 
         print(doc.page_content[:1500])
 
@@ -246,8 +236,6 @@ Please provide more details.
     context = "\n\n".join(
         [doc.page_content for doc in docs]
     )
-
-    print(f"DEBUG: Combined context length being sent to Groq: {len(context)} chars")
 
 
     response = client.chat.completions.create(
@@ -299,7 +287,4 @@ Apply the closest Laws and provide the most practical umpire decision.
     )
 
 
-    final_answer = response.choices[0].message.content
-    print(f"DEBUG: Groq response received, length: {len(final_answer) if final_answer else 0} chars")
-
-    return final_answer
+    return response.choices[0].message.content
