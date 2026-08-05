@@ -7,6 +7,9 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route("/chat", methods=["POST"])
+@app.route("/")
+def home():
+    return "🏏 CricketSense AI Backend is running successfully!"
 def chat():
     try:
         print("STEP 1")
