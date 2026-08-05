@@ -25,14 +25,13 @@ def chat():
         })
 
     except Exception as e:
-        print("\n========== ERROR ==========")
-        traceback.print_exc()
-        print("===========================\n")
+    import traceback
 
-        return jsonify({
-            "reply": "Server Error"
-        }), 500
+    print(traceback.format_exc())
 
+    return jsonify({
+        "reply": str(e)
+    }), 500
 import os
 
 if __name__ == "__main__":
