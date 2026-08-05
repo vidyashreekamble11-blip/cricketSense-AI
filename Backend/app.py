@@ -9,15 +9,17 @@ CORS(app)
 @app.route("/chat", methods=["POST"])
 def chat():
     try:
+        print("STEP 1")
         data = request.get_json()
-
+        print("STEP 2")
         question = data.get("message")
         print("Question:", question)
 
         answer = ask_groq(question)
+        print("STEP 2")
 
         print("Answer generated successfully")
-
+        print("STEP 4")
         return jsonify({
             "reply": answer
         })
