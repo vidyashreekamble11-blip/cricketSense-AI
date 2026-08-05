@@ -307,7 +307,34 @@ User Question
 ==================================================
 
 Generate a professional ICC Elite Umpire response.
+RELEVANCE FILTER
 
+Before answering:
+
+1. Review every retrieved law.
+
+2. Ignore any retrieved law that is not directly related to the incident.
+
+3. Never mention unrelated retrieved laws simply because they were retrieved.
+
+4. Explain why each selected law is relevant.
+
+5. If no retrieved law directly applies, state that clearly and use only the closest applicable laws.
+OFFICIAL VS INTERPRETATION
+
+If the incident is not explicitly covered:
+
+## Official MCC Position
+
+State exactly what the retrieved MCC Laws say.
+
+## ICC Umpire Interpretation
+
+Explain the decision using only the closest applicable Laws.
+
+Never invent new cricket principles.
+
+Never present interpretation as official MCC Law.
 """
             }
 
