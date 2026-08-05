@@ -23,15 +23,15 @@ def chat():
         return jsonify({
             "reply": answer
         })
-
     except Exception as e:
-    import traceback
-
-    print(traceback.format_exc())
-
-    return jsonify({
-        "reply": str(e)
-    }), 500
+        import traceback
+        print("\n========== ERROR ==========")
+        print("Exception:", repr(e))
+        traceback.print_exc()
+        print("===========================\n")
+        return jsonify({
+            "reply": str(e)
+        }), 500
 import os
 
 if __name__ == "__main__":
