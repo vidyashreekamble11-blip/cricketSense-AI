@@ -730,6 +730,69 @@ Dead ball follow-up: moderate (Reasonable Umpire Interpretation — this
 exact scenario is not an explicitly enumerated Law 20 trigger, and
 real umpiring authorities are divided on it).""",
     },
+    {
+        "match_groups": [
+            ["non-striker", "non striker", "nonstriker"],
+            ["leave", "leaves", "left", "backing up", "out of the crease",
+             "out of his crease", "out of her crease", "out of their crease",
+             "out of the ground", "early"],
+            ["before", "without releasing", "without completing",
+             "prior to release", "never released", "without ever releasing"],
+            ["bail", "bails", "stump", "stumps", "wicket", "mankad"],
+        ],
+        "answer": """🏏 CricketSense AI Decision
+
+🎯 Incident
+The non-striker leaves their ground before the bowler releases the
+ball. The bowler removes the bails at the non-striker's end without
+completing the delivery.
+
+📚 Applicable MCC Law(s)
+Law 38.3.1 (Non-striker out of their ground), Law 38.3.1.1 (definition
+of "when the bowler would normally have been expected to release the
+ball"), Law 20.1 (When the ball comes into play).
+
+🧠 Umpire Analysis
+Law 20.1 defines the ball as coming into play from the start of the
+bowler's run-up or bowling action — not from the moment of release.
+Law 38.3.1 states plainly: "At any time from the moment the ball
+comes into play until the instant when the bowler would normally have
+been expected to release the ball, the non-striker is liable to be
+Run out if he/she is out of his/her ground... whether or not the ball
+is subsequently delivered." That final clause is decisive: delivery
+of the ball is explicitly NOT required for this dismissal.
+
+Law 38.3.1.1 defines "the instant when the bowler would normally have
+been expected to release the ball" as the moment the bowler's arm
+reaches the highest point of the normal bowling action. As long as
+the bowler removes the bails at or before that point, the non-striker
+remains liable to be run out under this Law.
+
+This is one of the most extensively clarified provisions in the
+current Code (MCC amended the wording in 2023 specifically to remove
+ambiguity around this exact scenario), so it should not be treated as
+an unsettled or interpretive case.
+
+⚖️ Official MCC Position
+Law 38.3.1 explicitly permits this dismissal, and explicitly states
+it applies whether or not the ball is subsequently delivered.
+
+🧑‍⚖️ Umpire Interpretation
+None required — this is settled, Established Law, not an
+interpretation.
+
+✅ Decision
+The non-striker is Out, Run Out.
+
+⚖️ Final Verdict
+Out, Run Out (Law 38.3.1) — the ball was in play from the start of
+the bowler's action, and delivery/release of the ball is not required
+for this dismissal.
+
+🎯 Confidence
+Very high (Established Law, Law 38.3.1 — one of the most explicitly
+clarified provisions in the current Code).""",
+    },
 ]
 
 
